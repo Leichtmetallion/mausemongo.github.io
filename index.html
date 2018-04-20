@@ -10,6 +10,15 @@
 
 </head>
 
+<script>
+    function PlaySound(jackson) {
+        alert("On Press of "+jackson);
+        var path = "https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/mp3/jackson.mp3"
+        var snd = new Audio(path + jackson + ".mp3");
+        snd.play();
+    }
+</script>
+
 <body>
   <div class="wall" rows="2" columns="3">
 
@@ -20,9 +29,9 @@
     </div>
   </div>
   <div class="slide slide_row_0_column_1" style="width: 33.3333%; height: 50%; left: 33.3333%; top: 0%; opacity: 1;">
-    <div class="image"><div class="preloader"><div></div><div></div></div><div class="image-in image1"></div><div class="image-in image2"></div></div>
+    <div class="image"><div class="preloader"><div></div><div></div></div><div class="PlaySound('jackson'),image-in image1"></div><div class="image-in image2"></div></div>
     <div class="text">
-      <h1>the with the mouse I had also times</h1>
+      <h1>OhOh</h1>
     </div>
   </div>
   <div class="slide slide_row_0_column_2" style="width: 33.3333%; height: 50%; left: 66.6667%; top: 0%; opacity: 1;">
