@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+.wall {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #303133;
+  /*min-height: 800px; */
+}
+.wall div {
+  box-sizing: border-box;
+}
+.wall .slide {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #333;
+  opacity: 0;
+}
+.wall .slide .image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.wall .slide .image .image-in {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 105%;
+  width: 105%;
+  background-size: cover;
+  background-position: center;
+  transform: translateX(-50%) translateY(-50%);
+}
+.wall .slide .image .image-in.image2 {
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: grayscale(1);
+  transition: opacity 0.5s;
+}
+.wall .slide:hover .image-in.image2 {
+  opacity: 0;
+}
+.wall .slide:nth-child(1) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/1.jpg);
+}
+.wall .slide:nth-child(2) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/2.jpg);
+}
+.wall .slide:nth-child(3) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/3.jpeg);
+}
+.wall .slide:nth-child(4) .image div {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/4.jpg);
+}
+.wall .slide:nth-child(5) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/5.jpg);
+}
+.wall .slide:nth-child(6) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/6.jpg);
+}
+.wall .slide:nth-child(7) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/1.jpg);
+}
+.wall .slide:nth-child(8) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/2.jpg);
+}
+.wall .slide:nth-child(9) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/3-1.jpeg);
+}
+.wall .slide:nth-child(10) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/4.jpg);
+}
+.wall .slide:nth-child(11) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/5.jpg);
+}
+.wall .slide:nth-child(12) .image .image-in {
+  background-image: url(https://raw.githubusercontent.com/mausemongo/mausemongo.github.io/master/img/6.jpg);
+}
+
+.wall button {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 10%;
+  height: 0%;
+  padding-bottom: 10%;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.5s;
+  top: -30%;
+  right: -30%;
+}
+.wall button:before, .wall button:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30%;
+  height: 100%;
+  background-color: #666;
+  transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+  border-radius: 100px;
+}
+.wall button:after {
+  transform: translateX(-50%) translateY(-50%) rotateZ(-45deg);
+}
+.wall button:hover {
+  opacity: 1;
+}
+.wall .image .preloader {
+  position: absolute;
+  width: 10%;
+  height: 0%;
+  padding-bottom: 10%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.wall .image .preloader div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  overflow: hidden;
+  animation: animatePreloader 1s infinite linear;
+  transform-origin: 50% 100%;
+}
+.wall .image .preloader div:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.wall .image .preloader div:nth-child(2) {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  animation: animatePreloader 0.5s infinite linear;
+}
+@keyframes animatePreloader {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateZ(360deg);
+  }
+}
+
+.wall .slide .text {
+  position: absolute;
+  color: #333;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: background-color 0.5s;
+}
+.wall .slide .text:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+.wall .slide .text h1, .wall .slide .text div {
+  margin: 0px;
+  padding: 0px;
+}
+.wall .slide .text h1 {
+  text-transform: uppercase;
+  font-family: 'Saira Extra Condensed', sans-serif;
+}
+.wall .slide .text div {
+  margin-top: 20px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.wall .hint {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  font-family: 'Inconsolata', monospace;
+  opacity: 0.1;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.wall .hint:hover {
+  opacity: 1;
+}
+
+@-webkit-keyframes walk-front {
+  0% {
+    background-position: -143px -49px;
+    width: 32px;
+    height: 79px;
+  }
+  33% {
+    background-position: -191px -48px;
+    width: 31px;
+    height: 80px;
+  }
+  66% {
+    background-position: -238px -51px;
+    width: 29px;
+    height: 77px;
+  }
+  100% {
+    background-position: -283px -48px;
+    width: 32px;
+    height: 80px;
+  }
+}
+@keyframes walk-front {
+  0% {
+    background-position: -143px -49px;
+    width: 32px;
+    height: 79px;
+  }
+  33% {
+    background-position: -191px -48px;
+    width: 31px;
+    height: 80px;
+  }
+  66% {
+    background-position: -238px -51px;
+    width: 29px;
+    height: 77px;
+  }
+  100% {
+    background-position: -283px -48px;
+    width: 32px;
+    height: 80px;
+  }
+}
+@-webkit-keyframes walk-back {
+  0% {
+    background-position: -475px -49px;
+    width: 32px;
+    height: 79px;
+  }
+  33% {
+    background-position: -523px -48px;
+    width: 31px;
+    height: 80px;
+  }
+  66% {
+    background-position: -570px -49px;
+    width: 29px;
+    height: 79px;
+  }
+  100% {
+    background-position: -615px -48px;
+    width: 32px;
+    height: 80px;
+  }
+}
+@keyframes walk-back {
+  0% {
+    background-position: -475px -49px;
+    width: 32px;
+    height: 79px;
+  }
+  33% {
+    background-position: -523px -48px;
+    width: 31px;
+    height: 80px;
+  }
+  66% {
+    background-position: -570px -49px;
+    width: 29px;
+    height: 79px;
+  }
+  100% {
+    background-position: -615px -48px;
+    width: 32px;
+    height: 80px;
+  }
+}
+@-webkit-keyframes punch-left {
+  0% {
+    background-position: -48px -195px;
+    width: 29px;
+    height: 77px;
+  }
+  25% {
+    background-position: -93px -192px;
+    width: 32px;
+    height: 80px;
+  }
+  75% {
+    background-position: -141px -194px;
+    width: 56px;
+    height: 78px;
+  }
+}
+@keyframes punch-left {
+  0% {
+    background-position: -48px -195px;
+    width: 29px;
+    height: 77px;
+  }
+  25% {
+    background-position: -93px -192px;
+    width: 32px;
+    height: 80px;
+  }
+  75% {
+    background-position: -141px -194px;
+    width: 56px;
+    height: 78px;
+  }
+}
+@-webkit-keyframes punch-right {
+  0% {
+    background-position: -261px -195px;
+    width: 32px;
+    height: 77px;
+  }
+  25% {
+    background-position: -309px -192px;
+    width: 32px;
+    height: 80px;
+  }
+  75% {
+    background-position: -357px -194px;
+    width: 52px;
+    height: 78px;
+  }
+}
+@keyframes punch-right {
+  0% {
+    background-position: -261px -195px;
+    width: 32px;
+    height: 77px;
+  }
+  25% {
+    background-position: -309px -192px;
+    width: 32px;
+    height: 80px;
+  }
+  75% {
+    background-position: -357px -194px;
+    width: 52px;
+    height: 78px;
+  }
+}
+@-webkit-keyframes kick {
+  0% {
+    background-position: -48px -49px;
+    width: 31px;
+    height: 79px;
+  }
+  50% {
+    background-position: -473px -197px;
+    width: 29px;
+    height: 75px;
+  }
+  75% {
+    background-position: -518px -184px;
+    width: 48px;
+    height: 88px;
+  }
+}
+@keyframes kick {
+  0% {
+    background-position: -48px -49px;
+    width: 31px;
+    height: 79px;
+  }
+  50% {
+    background-position: -473px -197px;
+    width: 29px;
+    height: 75px;
+  }
+  75% {
+    background-position: -518px -184px;
+    width: 48px;
+    height: 88px;
+  }
+}
+@-webkit-keyframes call-out {
+  0% {
+    background-position: -48px -49px;
+    width: 31px;
+    height: 79px;
+  }
+  35% {
+    background-position: -665px -480px;
+    width: 40px;
+    height: 80px;
+  }
+  40% {
+    background-position: -721px -482px;
+    width: 50px;
+    height: 78px;
+  }
+}
+@keyframes call-out {
+  0% {
+    background-position: -48px -49px;
+    width: 31px;
+    height: 79px;
+  }
+  35% {
+    background-position: -665px -480px;
+    width: 40px;
+    height: 80px;
+  }
+  40% {
+    background-position: -721px -482px;
+    width: 50px;
+    height: 78px;
+  }
+}
+@-webkit-keyframes death {
+  0% {
+    background-position: -48px -1808px;
+    width: 29px;
+    height: 80px;
+  }
+  25% {
+    background-position: -188px -1814px;
+    width: 44px;
+    height: 74px;
+  }
+  50% {
+    background-position: -248px -1837px;
+    width: 48px;
+    height: 51px;
+  }
+  75% {
+    background-position: -312px -1852px;
+    width: 63px;
+    height: 36px;
+  }
+  100% {
+    background-position: -312px -1852px;
+    width: 63px;
+    height: 36px;
+  }
+}
+@keyframes death {
+  0% {
+    background-position: -48px -1808px;
+    width: 29px;
+    height: 80px;
+  }
+  25% {
+    background-position: -188px -1814px;
+    width: 44px;
+    height: 74px;
+  }
+  50% {
+    background-position: -248px -1837px;
+    width: 48px;
+    height: 51px;
+  }
+  75% {
+    background-position: -312px -1852px;
+    width: 63px;
+    height: 36px;
+  }
+  100% {
+    background-position: -312px -1852px;
+    width: 63px;
+    height: 36px;
+  }
+}
+#brother {
+  position: fixed;
+}
+
+.sprite {
+  background: url('https://2oby3a.bn1302.livefilestore.com/y4m_PNyOzhP6aPoJD9DQ_zS-kMrUNERYky6yEgbc573B19WeG04-BV_YUZPOSK5xG7xRb0hnpw1RVb6u8bz0w2l33-BqOuIZxuZhr0vfCv1kJ6GCzEznsWZ__w_DRUzBKJ7QoWrtV9PVk2zg84OiwlPY4Bnhe9LRBN0mqnJoetrsZHWZa6SUt6JDGIL1pRNyE5-CaP-SfdOUPoj86wb2hUfTA?width=1312&height=2960&cropmode=none')
+    no-repeat;
+  width: 35px;
+  height: 85px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* resting states */
+.sprite.rest-front {
+  background-position: -48px -49px;
+  width: 31px;
+  height: 79px;
+  animation: call-out 2.5s steps(1) 2s infinite alternate;
+  -webkit-animation: call-out 2.5s steps(1) 2s infinite alternate;
+}
+.sprite.rest-back {
+  background-position: -379px -49px;
+  width: 32px;
+  height: 79px;
+}
+
+.sprite.invert {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+/* walking states */
+.sprite.walk-front {
+  -webkit-animation: walk-front 0.5s steps(1) infinite;
+  animation: walk-front 0.5s steps(1) infinite;
+}
+.sprite.walk-back {
+  -webkit-animation: walk-back 0.5s steps(1) infinite;
+  animation: walk-back 0.5s steps(1) infinite;
+}
+
+/* attack states */
+.sprite.walk-front.punch-left, .sprite.walk-back.punch-left {
+  -webkit-animation: punch-left 0.5s steps(1) infinite;
+  animation: punch-left 0.5s steps(1) infinite;
+}
+.sprite.walk-front.punch-right, .sprite.walk-back.punch-right {
+  -webkit-animation: punch-right 0.5s steps(1) infinite;
+  animation: punch-right 0.5s steps(1) infinite;
+}
+.sprite.kick {
+  -webkit-animation: kick 0.5s steps(1) infinite;
+  animation: kick 0.5s steps(1) infinite;
+}
+
+.sprite.call-out {
+  -webkit-animation: call-out 0.5s steps(1) infinite;
+  animation: call-out 0.5s steps(1) infinite;
+}
+
+.sprite.death {
+  background-position: -312px -1852px;
+  width: 63px;
+  height: 36px;
+  -webkit-animation: death 0.5s steps(1) 1;
+  animation: death 0.5s steps(1) 1;
+}
