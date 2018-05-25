@@ -8,7 +8,7 @@
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
   background-color: #303133;
   /*min-height: 800px; */
